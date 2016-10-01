@@ -18,10 +18,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="vsBase.cpp">
+    <ClCompile Include="ffgo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vsBaseDlg.cpp">
+    <ClCompile Include="ffgoDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
@@ -36,7 +36,7 @@
     <ClCompile Include="src\ProcessManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\PThread_vsBase.cpp">
+    <ClCompile Include="src\PThread_ffgo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CapScreenAndAudio.cpp">
@@ -53,7 +53,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="vsBase.rc">
+    <ResourceCompile Include="ffgo.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -127,10 +127,10 @@
     <ClInclude Include="include\libavcodec\vorbis_parser.h">
       <Filter>Header Files\lib</Filter>
     </ClInclude>
-    <ClInclude Include="vsBase.h">
+    <ClInclude Include="ffgo.h">
       <Filter>Header Files\lib</Filter>
     </ClInclude>
-    <ClInclude Include="vsBaseDlg.h">
+    <ClInclude Include="ffgoDlg.h">
       <Filter>Header Files\lib</Filter>
     </ClInclude>
     <ClInclude Include="include\libavcodec\xvmc.h">
@@ -145,7 +145,7 @@
     <ClInclude Include="src\include\ProcessManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\PThread_vsBase.h">
+    <ClInclude Include="src\include\PThread_ffgo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="def.h">
@@ -168,7 +168,7 @@
     <Image Include="logo_rec.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\vsBase.ico">
+    <Image Include="res\ffgo.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
@@ -176,7 +176,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="res\vsBase.rc2">
+    <CustomBuild Include="res\ffgo.rc2">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>

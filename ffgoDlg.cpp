@@ -1,9 +1,9 @@
-// vsBaseDlg.cpp : implementation file
+// ffgoDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "vsBase.h"
-#include "vsBaseDlg.h"
+#include "ffgo.h"
+#include "ffgoDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -284,7 +284,7 @@ void CMainDlg::OnBnClickedStopCmd()
 void CMainDlg::OnBnClickedRunRec()
 {
 	long pParam = NULL;
-	PThread_vsBase mpthread;
+	PThread_ffgo mpthread;
 	mpthread.Start_PThread(&pParam);
 	printf("============ END =============\n");
 }

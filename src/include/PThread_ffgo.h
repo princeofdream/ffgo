@@ -5,12 +5,12 @@
 
 UINT __cdecl ThreadProc(LPVOID pParam);
 
-class PThread_vsBase :
+class PThread_ffgo :
 	public CWinThread
 {
 public:
-	PThread_vsBase();
-	~PThread_vsBase();
+	PThread_ffgo();
+	~PThread_ffgo();
 
 public:
 	UINT Start_PThread(long* pParam);

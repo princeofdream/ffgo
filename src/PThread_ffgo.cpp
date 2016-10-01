@@ -1,14 +1,14 @@
 #include "stdafx.h"
-#include "include\PThread_vsBase.h"
+#include "include\PThread_ffgo.h"
 #include "include/grabScreen.h"
 
 
-PThread_vsBase::PThread_vsBase()
+PThread_ffgo::PThread_ffgo()
 {
 }
 
 
-PThread_vsBase::~PThread_vsBase()
+PThread_ffgo::~PThread_ffgo()
 {
 }
 
@@ -46,7 +46,7 @@ UINT __cdecl ThreadProc(LPVOID pParam)
 
 
 
-UINT PThread_vsBase::Start_PThread(long* pParam)
+UINT PThread_ffgo::Start_PThread(long* pParam)
 {
 #if 1	//thread test
 	CWinThread *pThread = NULL;

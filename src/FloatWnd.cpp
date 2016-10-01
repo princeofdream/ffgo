@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "../vsBase.h"
+#include "../ffgo.h"
 #include "include/FloatWnd.h"
 
 #ifdef _DEBUG

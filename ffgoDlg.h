@@ -1,4 +1,4 @@
-// vsBaseDlg.h : header file
+// ffgoDlg.h : header file
 //
 
 #if !defined(AFX_MAINDLG_H__9DE2C7F5_0D02_48F7_A1D0_89D7626F1323__INCLUDED_)
@@ -12,7 +12,7 @@
 // CMainDlg dialog
 
 #include "src/include/FloatWnd.h"
-#include "src/include/PThread_vsBase.h"
+#include "src/include/PThread_ffgo.h"
 #include "src/include/ProcessManager.h"
 
 //extern UINT __cdecl AfxThreadProc(LPVOID pParam);

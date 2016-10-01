@@ -5,7 +5,7 @@ Version=1
 LastClass=CFloatWnd
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
-NewFileInclude2=#include "vsBase.h"
+NewFileInclude2=#include "ffgo.h"
 
 ClassCount=4
 Class1=CMainApp
@@ -22,14 +22,14 @@ Resource5=IDR_MENU1
 
 [CLS:CMainApp]
 Type=0
-HeaderFile=vsBase.h
-ImplementationFile=vsBase.cpp
+HeaderFile=ffgo.h
+ImplementationFile=ffgo.cpp
 Filter=N
 
 [CLS:CMainDlg]
 Type=0
-HeaderFile=vsBaseDlg.h
-ImplementationFile=vsBaseDlg.cpp
+HeaderFile=ffgoDlg.h
+ImplementationFile=ffgoDlg.cpp
 Filter=D
 LastObject=CMainDlg
 BaseClass=CDialog
@@ -37,8 +37,8 @@ VirtualFilter=dWC
 
 [CLS:CAboutDlg]
 Type=0
-HeaderFile=vsBaseDlg.h
-ImplementationFile=vsBaseDlg.cpp
+HeaderFile=ffgoDlg.h
+ImplementationFile=ffgoDlg.cpp
 Filter=D
 
 [DLG:IDD_ABOUTBOX]

@@ -1,9 +1,9 @@
-// vsBase.cpp : Defines the class behaviors for the application.
+// ffgo.cpp : Defines the class behaviors for the application.
 //
 
 #include "stdafx.h"
-#include "vsBase.h"
-#include "vsBaseDlg.h"
+#include "ffgo.h"
+#include "ffgoDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

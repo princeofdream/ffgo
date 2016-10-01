@@ -68,7 +68,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\Release\vsBase.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\Release\ffgo.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ObjectFileName>.\Release\</ObjectFileName>
@@ -80,7 +80,7 @@
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Release\vsBase.tlb</TypeLibraryName>
+      <TypeLibraryName>.\Release\ffgo.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -90,12 +90,12 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\vsBase.bsc</OutputFile>
+      <OutputFile>.\Release\ffgo.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\Release\vsBase.exe</OutputFile>
+      <OutputFile>.\Release\ffgo.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -111,7 +111,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Debug\vsBase.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\Debug\ffgo.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
@@ -125,7 +125,7 @@
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Debug\vsBase.tlb</TypeLibraryName>
+      <TypeLibraryName>.\Debug\ffgo.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -135,13 +135,13 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\vsBase.bsc</OutputFile>
+      <OutputFile>.\Debug\ffgo.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\Debug\vsBase.exe</OutputFile>
+      <OutputFile>.\Debug\ffgo.exe</OutputFile>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>F:\Work_Space\Develop\FloatWnd\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -155,11 +155,11 @@
     <ClCompile Include="src\Ffmpeg_Encoder.cpp" />
     <ClCompile Include="src\FloatWnd.cpp" />
     <ClCompile Include="src\ProcessManager.cpp" />
-    <ClCompile Include="src\PThread_vsBase.cpp" />
+    <ClCompile Include="src\PThread_ffgo.cpp" />
     <ClCompile Include="src\StdAfx.cpp" />
     <ClCompile Include="src\st_debug.cpp" />
-    <ClCompile Include="vsBase.cpp" />
-    <ClCompile Include="vsBaseDlg.cpp" />
+    <ClCompile Include="ffgo.cpp" />
+    <ClCompile Include="ffgoDlg.cpp" />
     <ClCompile Include="src\grabScreen.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -169,7 +169,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="vsBase.rc" />
+    <ResourceCompile Include="ffgo.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="def.h" />
@@ -200,20 +200,20 @@
     <ClInclude Include="src\include\FloatWnd.h" />
     <ClInclude Include="src\include\grabScreen.h" />
     <ClInclude Include="src\include\ProcessManager.h" />
-    <ClInclude Include="src\include\PThread_vsBase.h" />
+    <ClInclude Include="src\include\PThread_ffgo.h" />
     <ClInclude Include="src\include\st_debug.h" />
-    <ClInclude Include="vsBase.h" />
-    <ClInclude Include="vsBaseDlg.h" />
+    <ClInclude Include="ffgo.h" />
+    <ClInclude Include="ffgoDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="logo.bmp" />
     <Image Include="logo_rec.bmp" />
-    <Image Include="res\vsBase.ico" />
+    <Image Include="res\ffgo.ico" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="res\vsBase.rc2" />
+    <CustomBuild Include="res\ffgo.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -223,7 +223,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties RESOURCE_FILE="vsBase.rc" />
+      <UserProperties RESOURCE_FILE="ffgo.rc" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
