@@ -2,6 +2,7 @@
 #include "afxwin.h"
 #include "ProcessManager.h"
 #include "../CapScreenAndAudio.h"
+#include "Ffmpeg_Encoder.h"
 
 UINT __cdecl ThreadProc(LPVOID pParam);
 

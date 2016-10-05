@@ -2,10 +2,11 @@
 
 
 #include "stdafx.h"
+#define __FFMPEG_ENCODER__
 
-//#define __FFMPEG_ENCODER__
+#define MAX_INFO_SIZE 2048
 
-#if 0
+#ifdef __FFMPEG_ENCODER__
 #ifdef	__cplusplus
 extern "C"
 {
@@ -15,6 +16,7 @@ extern "C"
 #include "libswscale/swscale.h"
 #include "libavdevice/avdevice.h"
 #include "libavutil/audio_fifo.h"
+#include "libavfilter/avfilter.h"
 
 #pragma comment(lib, "avcodec.lib")
 #pragma comment(lib, "avformat.lib")
@@ -22,31 +24,32 @@ extern "C"
 #pragma comment(lib, "avdevice.lib")
 #pragma comment(lib, "avfilter.lib")
 
-	//#pragma comment(lib, "avfilter.lib")
-	//#pragma comment(lib, "postproc.lib")
-	//#pragma comment(lib, "swresample.lib")
 #pragma comment(lib, "swscale.lib")
 #ifdef __cplusplus
 };
 #endif
 
-AVFormatContext	*pFormatCtx_Video = NULL, *pFormatCtx_Audio = NULL, *pFormatCtx_Out = NULL;
-AVCodecContext	*pCodecCtx_Video;
-AVCodec			*pCodec_Video;
-AVFifoBuffer	*fifo_video = NULL;
-AVAudioFifo		*fifo_audio = NULL;
-int VideoIndex, AudioIndex;
-
-CRITICAL_SECTION AudioSection, VideoSection;
-
 
 class Ffmpeg_Encoder
 {
+protected:
+#if 1
+	AVFormatContext	*pFormatCtx_Video = NULL, *pFormatCtx_Audio = NULL, *pFormatCtx_Out = NULL;
+	AVCodecContext	*pCodecCtx_Video;
+	AVCodec			*pCodec_Video;
+	AVFifoBuffer	*fifo_video = NULL;
+	AVAudioFifo		*fifo_audio = NULL;
+	int VideoIndex, AudioIndex;
+
+	CRITICAL_SECTION AudioSection, VideoSection;
+#endif
+
 public:
 	Ffmpeg_Encoder();
 	~Ffmpeg_Encoder();
 
 public:
+#if 1
 	AVFrame *m_pRGBFrame;   //帧对象  
 	AVFrame *m_pYUVFrame;   //帧对象  
 	AVCodec *pCodecH264;    //编码器  
@@ -60,12 +63,22 @@ public:
 	int width;              //输出视频宽度  
 	int height;             //输出视频高度  
 //	avpacket pkt;            //数据包结构体
+#endif
 
 public:
-	void Ffmpeg_Encoder_Init();//初始化  
-//	void Ffmpeg_Encoder_Setpara(CodecID mycodeid, int vwidth, int vheight);//设置参数,第一个参数为编码器,第二个参数为压缩出来的视频的宽度，第三个视频则为其高度  
-	void Ffmpeg_Encoder_Encode(FILE *file, uint8_t *data);//编码并写入数据到文件  
-	void Ffmpeg_Encoder_Close();//关闭
+	int Ffmpeg_Encoder_Init();//初始化  
+	//void Ffmpeg_Encoder_Setpara(CodecID mycodeid, int vwidth, int vheight);//设置参数,第一个参数为编码器,第二个参数为压缩出来的视频的宽度，第三个视频则为其高度  
+	int Ffmpeg_Encoder_Encode(FILE *file, uint8_t *data);//编码并写入数据到文件  
+	int Ffmpeg_Encoder_Close();//关闭
+
+	char* urlprotocolinfo();
+	char* avformatinfo();
+	char* avcodecinfo();
+	char* avfilterinfo();
+	char* configurationinfo();
+
+	void get_encoder_info();
+
 };
 
 #endif

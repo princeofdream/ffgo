@@ -2,14 +2,17 @@
 #include "include\PThread_ffgo.h"
 #include "include/grabScreen.h"
 
+Ffmpeg_Encoder *mFfmpeg_Encoder;
 
 PThread_ffgo::PThread_ffgo()
 {
+	mFfmpeg_Encoder = new Ffmpeg_Encoder();
 }
 
 
 PThread_ffgo::~PThread_ffgo()
 {
+	delete mFfmpeg_Encoder;
 }
 
 
@@ -33,10 +36,10 @@ UINT __cdecl ThreadProc(LPVOID pParam)
 	//ProcessManager mproc;
 	//mproc.Start_New_Process("ping", "127.0.0.1", "-n 10", NULL);
 	printf("=================== Start Rec ================\n");
-#if 0
-	Start_Rec(0, NULL);
-#else
-	Start_SDL_Rec(0, NULL);
+#if 1
+	//Start_Rec(0, NULL);
+	//Start_SDL_Rec(0, NULL);
+	mFfmpeg_Encoder->get_encoder_info();
 #endif
 	printf("=================== Stop Rec ================\n");
 #endif
@@ -60,13 +63,19 @@ UINT PThread_ffgo::Start_PThread(long* pParam)
 		0,            //线程创建标志，如：CREATE_SUSPENDED
 		NULL);           //系统安全描述，NULL
 
-	if (pThread)
+	if (pThread < 0)
 	{
-		printf("Start PThread Sucess!");
+		printf("Start PThread Fail!!!\n");
+	}
+#if 0
+	else
+	{
+		printf("Start PThread Sucess!\n");
 		//pThread->m_bAutoDelete = TRUE;     //当线程结束是自动清除线程对象,默认是TRUE
 		//WaitForSingleObject(pThread->m_hThread, INFINITE); //等待线程结束
-														   //AfxMessageBox(strArg);
+													   //AfxMessageBox(strArg);
 	}
+#endif
 #endif
 	return 0;
 }

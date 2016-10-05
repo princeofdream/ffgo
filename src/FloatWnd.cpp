@@ -167,12 +167,11 @@ void CFloatWnd::OnNcLButtonDblClk(UINT nFlags, CPoint point)
 	CBitmap CBmp;
 	if (rec_flag == false)
 	{
+		printf("=================== Start Issue ================\n");
 		rec_flag = true;
 		CBmp.LoadMappedBitmap(IDB_BITMAP2, 0, 0, 0);
 		m_Logo.SetBitmap(HBITMAP(CBmp));
 	
-	
-
 		// TODO: Add your message handler code here and/or call default	
 		//CWnd *pParent = GetParent();
 		//ASSERT(pParent);
@@ -181,23 +180,24 @@ void CFloatWnd::OnNcLButtonDblClk(UINT nFlags, CPoint point)
 		//	pParent->ShowWindow(SW_SHOW);
 
 		//CreateThread(NULL, 0, CheckRecStatThread, m_hWnd, 0, NULL);
-		printf("--James--[%s:%d]---Create thread success\n", __FILE__, __LINE__);
+
 #if 1
 		mpt.Start_PThread(NULL);
 #endif
 		//pParent->SetForegroundWindow();
-		printf("Enter double click issue!---[%s:%d]---\n", __FILE__, __LINE__);
+		printf("=================== End Start Issue ================\n");
 		//CDialog::OnNcLButtonDblClk(nFlags, point);
 	}
 	else
 	{
-		printf("--James--[%s:%d]---\n", __FILE__, __LINE__);
+		printf("=================== Stop Issue ================\n");
 #if 1
 		PostMessage(WM_MYMESSAGE, 0, 0);
 		rec_flag = false;
 		CBmp.LoadMappedBitmap(IDB_BITMAP1, 0, 0, 0);
 		m_Logo.SetBitmap(HBITMAP(CBmp));
 #endif
+		printf("=================== End Stop Issue ================\n");
 	}
 }
 
@@ -238,7 +238,7 @@ DWORD WINAPI CheckRecStatThread(LPVOID lpParam)
 
 LRESULT CFloatWnd::OnHandleMessage(WPARAM wParma, LPARAM lParam)
 {
-	printf("--James--[%s:%d]---Recive Message!\n", __FILE__, __LINE__);
+	printf("--James--[%s:%d]---<%s>---Recive Message!\n", __FILE__, __LINE__,__func__);
 	SetRecStat(NULL);
 	return 0;
 }
